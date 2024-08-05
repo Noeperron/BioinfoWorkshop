@@ -37,7 +37,7 @@ VlnPlot(pbmc, features = c("nFeature_RNA", "nCount_RNA", "percent.mt"), ncol = 3
 pbmc <- subset(pbmc, subset = nFeature_RNA > 200 & nFeature_RNA < 2500 & percent.mt < 5)
 
 # Normalize the data 
-pbmc <- NormalizeData(pbmc, normalization.method = "LogNormalize", scale.factor = 10000)
+pbmc <- NormalizeData(pbmc, normalization.method = "LogNormalize")
 
 ## We next calculate a subset of features that exhibit high cell-to-cell variation in the dataset (i.e, they are highly expressed in some cells, and lowly expressed in others). 
 
