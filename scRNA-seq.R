@@ -1,4 +1,9 @@
-# Download the files https://cf.10xgenomics.com/samples/cell/pbmc3k/pbmc3k_filtered_gene_bc_matrices.tar.gz 
+#### Before running the script:
+
+## 1) On your Desktop make a folder “scRNA-seq”
+## 2) Download the files https://cf.10xgenomics.com/samples/cell/pbmc3k/pbmc3k_filtered_gene_bc_matrices.tar.gz 
+## 3) Move the data to the folder “scRNA-seq”
+## 4) Session > Set Working Directory > Choose Directory, and choose the folder “scRNA-seq”.
 
 # Remove package 'Matrix' and reinstall it
 remove.packages('Matrix')
@@ -37,7 +42,7 @@ VlnPlot(pbmc, features = c("nFeature_RNA", "nCount_RNA", "percent.mt"), ncol = 3
 pbmc <- subset(pbmc, subset = nFeature_RNA > 200 & nFeature_RNA < 2500 & percent.mt < 5)
 
 # Normalize the data 
-pbmc <- NormalizeData(pbmc, normalization.method = "LogNormalize")
+pbmc <- NormalizeData(pbmc, normalization.method = "LogNormalize", scale.factor = 10000)
 
 ## We next calculate a subset of features that exhibit high cell-to-cell variation in the dataset (i.e, they are highly expressed in some cells, and lowly expressed in others). 
 
