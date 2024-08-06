@@ -5,11 +5,8 @@
 ## 3) Move the data to the folder “scRNA-seq”
 ## 4) Session > Set Working Directory > Choose Directory, and choose the folder “scRNA-seq”.
 
-# Remove package 'Matrix' and reinstall it
-remove.packages('Matrix')
-install.packages("Matrix", repos="http://R-Forge.R-project.org")
-
 # Install packages
+install.packages("Matrix", repos="http://R-Forge.R-project.org")
 install.packages('tidyverse')
 install.packages('remotes')
 library(remotes)
